@@ -55,6 +55,7 @@ function get_dlink_l2_switch_ports($site, &$device, $lowPort = 0, $highPort = 0)
 		$ifInterfaces[$ifIndex]["ifType"] = $ifTypes[$ifIndex];
 		$ifInterfaces[$ifIndex]["linkPort"] = @$link_ports[$ifIndex];
 	}
+	$if2 = build_InterfacesTable($device, $ifIndexes, TRUE, TRUE);
 	mactrack_debug("ifInterfaces assembly complete.");
 
 	get_dlink_l2_dot1dTpFdbEntry_ports($site, $device, $ifInterfaces, "", TRUE, $lowPort, $highPort);
